@@ -79,6 +79,7 @@ pkgver() {
 
 prepare() {
     cd "$srcdir/$_pkgname"
+    git apply "$BUILDDIR/0001-Add-find_dependency-for-tsl-robin-map.patch"
     for submodule in {boost,nihstro,soundtouch,catch2,dynarmic,xbyak,fmt,enet,libressl,cubeb,discord-rpc,cpp-jwt,teakra,zstd,libyuv,cryptopp-cmake,cryptopp,dds-ktx,sdl2,lodepng,libusb,inih};
     do
     git config --file=.gitmodules submodule.${submodule}.url "$srcdir/${submodule}"

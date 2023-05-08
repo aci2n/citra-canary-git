@@ -1,0 +1,24 @@
+From 1c8031a56b21cf7f368bf51f1698a1d0bdbc17b5 Mon Sep 17 00:00:00 2001
+From: i2n <alvarocalace@hotmail.com>
+Date: Mon, 8 May 2023 21:50:32 +0900
+Subject: [PATCH] Add find_dependency for tsl-robin-map
+
+---
+ src/video_core/CMakeLists.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/src/video_core/CMakeLists.txt b/src/video_core/CMakeLists.txt
+index 547ed2d22..acd7e6a2b 100644
+--- a/src/video_core/CMakeLists.txt
++++ b/src/video_core/CMakeLists.txt
+@@ -123,6 +123,7 @@ add_library(video_core STATIC
+ 
+ add_dependencies(video_core host_shaders)
+ target_include_directories(video_core PRIVATE ${HOST_SHADERS_INCLUDE})
++find_dependency(tsl-robin-map)
+ 
+ create_target_directory_groups(video_core)
+ 
+-- 
+2.40.1
+

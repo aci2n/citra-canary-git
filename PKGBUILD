@@ -3,8 +3,8 @@
 
 _pkgname=citra
 pkgname=$_pkgname-canary-git
-pkgver=r9565.b43c06653
-pkgrel=2
+pkgver=r9569.851bcfdab
+pkgrel=1
 pkgdesc='An experimental open-source Nintendo 3DS emulator/debugger'
 arch=('i686' 'x86_64')
 url='https://github.com/citra-emu/citra-canary'
@@ -85,7 +85,7 @@ prepare() {
     git config --file=.gitmodules submodule.${submodule}.url "$srcdir/${submodule}"
     done
     git config --file=.gitmodules submodule.externals/openal-soft.url "$srcdir/openal-soft"
-    git -c protocol.file.allow=always submodule update --init
+    git -c protocol.file.allow=always submodule update --init --recursive
 
     cd "$srcdir/$_pkgname/externals/cubeb"
     git config --file=.gitmodules submodule.googletest.url "$srcdir/googletest"
